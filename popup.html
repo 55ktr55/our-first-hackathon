@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="./styles/normalize.css" rel="stylesheet">
+  <link href="./lib/nouislider.min.css" rel="stylesheet">
+  <link href="./styles/popup.css" rel="stylesheet">
+</head>
+<body>
+<div class="main-flex">
+  <div class="header">
+    <span class="title">Hack Tube</span>
+  </div>
+  <div class="seek-bar-flex">
+    <div class="btn-flex">
+      <div id="play-btn" class="btn play-btn">
+        <object data="./svg/play.svg" type="image/svg+xml" id="play-btn-svg">
+        </object>
+        <object data="./svg/pause.svg" type="image/svg+xml" id="pause-btn-svg">
+        </object>
+      </div>
+    </div>
+    <div class="seek-bar-area">
+      <div class="duration-text">
+        <span id="current-time">3:40</span> / <span id="duration">6:00</span>
+      </div>
+      <input type="range" min="0" max="600" value="0" id="seek-bar-range" class="seek-bar-range">
+      <div class="loop-slider-area">
+        <div id="slider"></div>
+      </div>
+      <div class="loop-control-area">
+        <div class="loop-text">
+          <span class="loop-title">LoopStart:</span> <span  id="loop-start-num">3:00</span> ~ <span class="loop-title">LoopEnd:</span> <span id="loop-end-num">5:00</span>
+        </div>
+        <div class="loop-on-off">
+          <div class="repeat-icn">
+            <object data="./svg/repeat.svg" type="image/svg+xml">
+            </object>
+          </div>
+          <div class="switch-flex">
+            <input id="loop-switch" type="checkbox">
+            <div id="loop-slider" class="switch-slider"></div>
+            <div class="switch-label switch-pre-label"><span class="switch-text">Off</span></div>
+            <div class="switch-label switch-post-label"><span class="switch-text">On</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="controller-flex">
+    <div class="range-flex">
+      <div class="range-wrapper">
+        <div class="effect-bar">
+          <div class="range-head-flex">
+            <div class="range-label">
+              <label>Voice: </label>
+              <span id="voice-num">なし</span>
+            </div>
+            <div id="voice-reset-btn" class="btn reset-btn">RESET</div>
+          </div>
+          <div class="range-main">
+            <input id="voice-range" type="range" class="control-range" min="-1" max="1" value="0">
+          </div>
+        </div>
+        <div class="effect-bar">
+          <div class="range-head-flex">
+            <div class="range-label">
+              <label>Chorus: </label>
+              <span id="chorus-num">なし</span>
+            </div>
+            <div id="chorus-reset-btn" class="btn reset-btn">RESET</div>
+          </div>
+          <div class="range-main">
+            <input id="chorus-range" type="range" class="control-range" min="-1" max="1" value="0">
+          </div>
+        </div>
+        <div class="effect-bar">
+          <div class="range-head-flex">
+            <div class="range-label">
+              <label>Robot: </label>
+              <span id="robot-num">なし</span>
+            </div>
+            <div id="robot-reset-btn" class="btn reset-btn">RESET</div>
+          </div>
+          <div class="range-main">
+            <input id="robot-range" type="range" class="control-range" min="-1" max="1" value="0">
+          </div>
+        </div>
+        <div class="effect-bar">
+          <div class="range-head-flex">
+            <div class="range-label">
+              <label>Electric: </label>
+              <span id="delay-num">なし</span>
+            </div>
+            <div id="delay-reset-btn" class="btn reset-btn">RESET</div>
+          </div>
+          <div class="range-main">
+            <input id="delay-range" type="range" class="control-range" min="-1" max="1" value="0">
+          </div>
+        </div>
+        <div class="effect-bar">
+          <div class="range-head-flex">
+            <div class="range-label">
+              <label>3D Sound: </label>
+              <span id="3DSound-num">なし</span>
+            </div>
+            <div id="3DSound-reset-btn" class="btn reset-btn">RESET</div>
+          </div>
+          <div class="range-main">
+            <input id="3DSound-range" type="range" class="control-range" min="-100" max="100" value="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="footer">
+  <span class="copy-right">Copyright © 2021 Our-First-Hackathon All Rights Reserved.</span>
+</div>
+<script src="./lib/jquery-3.2.1.min.js"></script>
+<script src="./lib/nouislider.min.js"></script>
+<script src="./scripts/popup.js"></script>
+</body>
+</html>
