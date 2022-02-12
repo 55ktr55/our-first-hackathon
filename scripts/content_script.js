@@ -17,10 +17,6 @@
     this.chorusNode = this.audioCtx.createGain();
     this.robotNode1 = this.audioCtx.createGain();
     this.robotNode2 = this.audioCtx.createGain();
-    this.jungle = new Jungle(this.audioCtx);
-    this.jungle_chorus = new Jungle(this.audioCtx);
-    this.jungle_robot1 = new Jungle(this.audioCtx);
-    this.jungle_robot2 = new Jungle(this.audioCtx);
     this.panner = this.audioCtx.createStereoPanner();
     this.output = this.audioCtx.createGain();
     this.output2 = this.audioCtx.createGain();
@@ -55,10 +51,7 @@
     this.input.gain.value = 1;
     this.output.gain.value = 1;
     this.output2.gain.value = 1;
-    this.jungle.setPitchOffset(0, false);
-    this.jungle_chorus.setPitchOffset(0, false);
-    this.jungle_robot1.setPitchOffset(0, false);
-    this.jungle_robot2.setPitchOffset(0, false);
+
     this.nonPitchChangeMode.gain.value = 1;
     this.pitchChangeMode.gain.value = 0;
     this.chorusNode.gain.value = 0;
@@ -106,7 +99,6 @@
         this.nonPitchChangeMode.gain.value = 0;
         this.pitchChangeMode.gain.value = 1;
       }
-      this.jungle.setPitchOffset(pitchConvert(this.pitch), false);
     },
     makeChorus: function(value) {
       if (value === -1){
@@ -123,7 +115,6 @@
       } else if (value === 1){
         this.chorusNode.gain.value = 0.5;
       }
-      this.jungle_chorus.setPitchOffset(pitchConvert(this.chorus), false);
     },
     makeRobot: function(value) {
       if (value === -1){
@@ -146,8 +137,6 @@
         this.robotNode1.gain.value = 1;
         this.robotNode2.gain.value = 1;
       }
-      this.jungle_robot1.setPitchOffset(pitchConvert(this.robot1), false);
-      this.jungle_robot2.setPitchOffset(pitchConvert(this.robot2), false);
     },
     makeDelay: function(value) {
       if (value === -1){
@@ -202,15 +191,7 @@ function connectNode(that) {
   that.peakings[9].connect(that.chorusNode);
   that.peakings[9].connect(that.robotNode1);
   that.peakings[9].connect(that.robotNode2);
-  that.pitchChangeMode.connect(that.jungle.input);
   that.nonPitchChangeMode.connect(that.output);
-  that.chorusNode.connect(that.jungle_chorus.input);
-  that.robotNode1.connect(that.jungle_robot1.input);
-  that.robotNode2.connect(that.jungle_robot2.input);
-  that.jungle.output.connect(that.output);
-  that.jungle_chorus.output.connect(that.output);
-  that.jungle_robot1.output.connect(that.output);
-  that.jungle_robot2.output.connect(that.output);
   that.output.connect(that.nonDelayMode);
   that.output.connect(that.delayMode);
   // delay

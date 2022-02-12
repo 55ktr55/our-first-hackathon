@@ -1,1 +1,0 @@
-# our-first-hackathon
