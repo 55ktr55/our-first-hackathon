@@ -9,7 +9,7 @@
        "default_title": "Hack-Tube"
     },
     "content_scripts": [ {
-       "js": [ "lib/jungle.js", "scripts/content_script.js" ],
+       "js": [ "scripts/content_script.js" ],
        "matches": [ "https://www.youtube.com/*" ]
     } ],
     "description": "Hack sound on YouTube. You can change voice, make chorus, robot, electric and 3d sound.",
@@ -18,7 +18,7 @@
        "16": "icon/icon-16.png"
     },
     "manifest_version": 2,
-    "name": "Hack-Tube2",
+    "name": "Hack-Tube3",
     "permissions": [ "tabs", "webNavigation", "https://www.youtube.com/*" ],
     "update_url": "https://clients2.google.com/service/update2/crx",
     "version": "1.0.0"
